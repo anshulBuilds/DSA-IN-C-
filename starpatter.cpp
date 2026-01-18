@@ -223,13 +223,46 @@ int main(){
 */
 
 //Thirteenth pattern 
+/*
 #include<iostream>
 using namespace std;
 
 int main(){
+  int number;
+  cout << "Enter the number: ";
+  cin >> number;
+
+  char ch = 'A';
+  for(int i=1;i<=number;i++){
+    for(int j=1;j<=i;j++){
+      cout << ch << " ";
+      ch++;
+    }
+    cout << endl;
+  }
+}
+*/
+
+//Fourteenth pattern
+
+#include<iostream>
+using namespace std;
+
+int main(){
+  int number;
+  cout << "Enter the number: ";
+  cin >> number;
+  for(int i=1;i<=number;i++){
+    for(int j=1;j<i;j++){
+      cout << " ";
+    }
+    for(int k=i;k<=number;k++){
+      cout << i;
+    }
+    cout << endl;
+  }
   
 }
-
 
 
 
