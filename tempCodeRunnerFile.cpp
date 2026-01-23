@@ -1,0 +1,1 @@
+cout << Sum(a,b) << endl;
