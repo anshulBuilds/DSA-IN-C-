@@ -16,3 +16,4 @@ int main(){
   cout << (number4 << 2) << endl;
   cout << (number4 >> 1) << endl;
 }
+
