@@ -4,6 +4,7 @@
 #include<stack>
 #include<queue>
 #include<set>
+#include<map>
 using namespace std;
 
 void explainpair(){
@@ -38,6 +39,9 @@ void explainvector(){
   vec.push_back(3);
   vec.pop_back();
   vec.push_back(4);
+
+  vec.insert(vec.begin()+4,5);
+  cout << *vec.begin() << endl;
 
 
 
@@ -156,14 +160,21 @@ void explainstack(){
     // cout << st.top() << endl;
     cout << st.size() << endl;
 
-    while(st.empty() == false){
+    int n = st.size();
+    for(int i=0;i<n;i++){
       cout << st.top() << " ";
       st.pop();
     }
-    cout << endl;
 
-    cout << st.top() << endl;
-    cout << st.size() << endl;
+    
+    // while(!st.empty()){
+    //   cout << st.top() << " ";
+    //   st.pop();
+    // }
+    // cout << endl;
+
+    // cout << st.top() << endl;
+    // cout << st.size() << endl;
     
 
 }
@@ -194,6 +205,10 @@ void explainset(){
     cout << i << " ";
   }
   cout << endl;
+  auto it  = st.end();
+  it--;
+  cout << *it << endl;
+
   // cout << *st.begin() << endl;
   // auto it = st.end();
   // it--;
@@ -239,16 +254,79 @@ void explainset(){
 
 }
 
-void mutliset(){
-  
+void explainmutliset(){
+    multiset<int> mult;
+    mult.insert(21);
+    mult.insert(21);
+    mult.insert(21);
+    mult.insert(21);
+    mult.insert(22);
+    mult.insert(0);
+    mult.insert(1);
+    mult.insert(1);
+    mult.insert(1);
+
+    for(auto i:mult){
+      cout << i << " ";
+    }
+    cout << endl;
+
+    auto it = mult.find(21);
+    if(it != mult.end()){
+      int index = distance(mult.begin(),it);
+      cout << index ;
+    }
+    cout << endl;
+
+    auto start = mult.lower_bound(19);
+    cout << *start << endl;
+    auto end = mult.upper_bound(21);
+    
+
+    for(auto i=start;i!=end;i++){
+      cout << distance(mult.begin(),i) << " ";
+    }
+
+
+
 }
+
+void explainmap(){
+  map<int,string> mp;
+  mp[1] = "Anshul";
+  mp[2] = "Riya";
+  mp[3] = "Knaika";
+  mp[4] = "Kushatgi";
+
+    // for(auto i:mp){
+    //     cout << i.first << " " << i.second << endl;
+    // }
+
+    auto it = mp.find(2);
+    if(it!=mp.end()){
+      cout << (*it).first << " " << (*it).second << endl;
+    }
+    else{
+      cout << "not found";
+    }
+    
+
+
+
+}
+
+
+
+
 
 int main(){
   // explainpair();
-  // explainvector();
+  //explainvector();
   //explainlist();
-  // explainstack();
- //explainpriorityqueue();
-  explainset();
+  //explainstack();
+  //explainpriorityqueue();
+  //explainset();
+  //explainmutliset();
+  //explainmap();
   return 0;
 }

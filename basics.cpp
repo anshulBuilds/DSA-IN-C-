@@ -218,18 +218,27 @@ int main(){
 //     }
 // }
 
+// #include<iostream>
+// using namespace std;
+
+// int main(){
+//   int number;
+//   cout << "Enter the number: ";
+//   cin >> number;
+
+//   int fact = 1;
+//   for(int i=1;i<=number;i++){
+//     fact = fact * i;
+//   }
+//   cout << "factorial of the number is: "  << fact;
+
+// }
+
+
 #include<iostream>
 using namespace std;
 
 int main(){
-  int number;
-  cout << "Enter the number: ";
-  cin >> number;
 
-  int fact = 1;
-  for(int i=1;i<=number;i++){
-    fact = fact * i;
-  }
-  cout << "factorial of the number is: "  << fact;
-
+  cout << boolalpha << (2!=1) << endl;
 }
