@@ -239,6 +239,10 @@ int main(){
 using namespace std;
 
 int main(){
-
-  cout << boolalpha << (2!=1) << endl;
+  string str = "53223";
+  int n = str.length();
+  for(int i=n-1;i>=0;i--){
+    cout << str[i] << " ";
+  }
+  
 }

@@ -228,3 +228,153 @@ int main(){
 }
 */
 
+// Problem
+// An element appears more than n/2 times. Find it.
+
+// Example
+// Input: [2, 2, 1, 2, 3, 2, 2]
+// Output: 2
+/*
+#include<iostream>
+using namespace std;
+#include<vector>
+#include<unordered_map>
+
+int Majority_Element(vector<int> nums){
+  int n = nums.size();
+  unordered_map<int,int> mpp;
+  for(int i=0;i<n;i++){
+    mpp[nums[i]]++;
+  }
+
+
+  for(auto it:mpp){
+    if(it.second > n/2){
+      return it.first;
+    }
+  }
+  return -1;
+}
+
+int main(){
+  vector<int> nums;
+  int x;
+  for(int i=0;i<7;i++){
+    cin >> x;
+    nums.push_back(x);
+  }
+  int result = Majority_Element(nums);
+  cout << "The majority element is: " << result << endl;
+}
+*/
+
+
+// Find All Elements With Frequency > 1
+
+// Problem
+// Print all elements that occur more than once.
+
+// Example
+// Input: [1, 2, 3, 2, 4, 1]
+// Output: 1 2
+
+// Why this matters
+
+// Very common interview warm-up
+/*
+#include<iostream>
+using namespace std;
+#include<vector>
+#include<unordered_map>
+
+int More_Than_once(vector<int> nums){
+  int n = nums.size();
+  unordered_map<int,int> mpp;
+  for(int i=0;i<n;i++){
+    mpp[nums[i]]++;
+  }
+
+  int count = 0;
+  for(auto it:mpp){
+    if(it.second > 1){
+      cout << it.first << " ";
+      cout << endl;
+      count ++;
+    }
+  }
+
+}
+
+
+int main(){
+  vector<int> nums;
+  int x;
+  for(int i=0;i<6;i++){
+    cin >> x;
+    nums.push_back(x);
+  }
+  int result = More_Than_once(nums);
+  
+}
+*/
+
+
+// Smallest Element With Highest Frequency
+
+// (This is a variation of the question you already saw 👀)
+
+// Problem
+// Return the smallest number among those with maximum frequency.
+
+// Example
+// Input: [2, 4, 3, 2, 5, 4]
+// Output: 2
+
+// Dry Run Logic
+
+// Step 1: Build frequency map
+
+// Step 2: Track maxFreq
+
+// Step 3: If tie → pick smaller value
+
+/*
+#include<iostream>
+#include<vector>
+#include<unordered_map>
+using namespace std;
+
+int Smallest_Frequency(vector<int> nums){
+  int n = nums.size();
+  unordered_map<int,int> mpp;
+  for(int i=0;i<n;i++){
+    mpp[nums[i]]++;
+  }
+  int firstel = -1;
+  int firstfrq = 0;
+  for(auto it:mpp){
+    int first = it.first;
+    int second = it.second;
+
+    if(second > firstfrq){
+      firstel = first;
+      firstfrq = second;
+    }
+    else if(second == firstfrq  && first < firstel){
+      firstel = first;
+    }
+  }
+  return firstel;
+}
+
+int main(){
+  vector<int> nums;
+  int x;
+  for(int i=0;i<5;i++){
+    cin >> x;
+    nums.push_back(x);
+  }
+  int result = Smallest_Frequency(nums);
+  cout << result;
+}
+*/
